@@ -1,0 +1,78 @@
+// Some general stuff
+$background-color: #5591D4
+$font-family: "Open Sans"
+$font-color-character-name: #1D6AB7
+$font-color-character-points: #606060
+$border-color-character-element: #B8B8B8
+
+body
+  background-color: $background-color
+  font-family: $font-family
+
+// defines the single character element
+.character
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font-size: 16px
+  height: 80px
+  border-bottom: 1px solid $border-color-character-element
+  &:last-child
+    border-bottom: none
+  .avatar
+    padding: 12px
+  .info
+    .name
+      color: $font-color-character-name
+    .points
+      color: $font-color-character-points
+
+// defines the general wrapper
+.wrapper
+  background: #fff
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10)
+  border-radius: 16px
+  padding: 15px 0
+
+// The container of characters
+.characters-container
+  margin: 100px 50px
+  &.narrow
+    .characters-wrapper
+      @extend .wrapper
+      width: 211px
+      .character-element
+        @extend .character
+    .input-name
+      max-width: 121px
+  &.wide
+    max-width: 500px
+    .nav-tabs
+      margin: 0 15px
+      li
+        margin-bottom: 0
+        min-width: 75px
+        max-height: 30px
+        a
+          padding: 4px 15px
+          border-color: #eee #eee #ddd
+          text-decoration: none
+          background-color: #eee
+    .characters-wrapper
+      @extend .wrapper
+      .character-element
+        @extend .character
+    .input-name
+      max-width: 138px
+
+.move-down
+  margin-top: 2px
+  margin-left: 2px
+
+.input-name
+  margin-top: -3px
+  margin-left: -3px
+  font-weight: 700
+  &:focus
+    outline-width: 1px
+    outline-color: $border-color-character-element

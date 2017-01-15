@@ -1,0 +1,36 @@
+<!-- narrow -->
+<div class="hidden-xs characters-container wide">
+        <uib-tabset active="active">
+            <uib-tab index="$index" ng-repeat="character in vm.characters | orderBy:'-points' track by $index "
+                     heading="{{character.name}}">
+                <div class="characters-wrapper">
+                    <div class="character-element">
+                        <div class="avatar">
+                            <img ng-src="{{character.icon_url}}" alt="image">
+                        </div>
+                        <div class="info">
+                            <clicky class="name" character="character" edit="vm.editCharacter(character)"
+                                 submit="vm.doneEditing(character, name)" escape="vm.revertEditing(character)" focus="character == vm.editedCharacter"></clicky>
+                            <div class="points">{{character.points}} points</div>
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+</div>
+<!-- wide -->
+<div class="visible-xs characters-container narrow">
+    <div class="characters-wrapper">
+        <div ng-repeat="character in vm.characters | orderBy:'-points' track by $index" class="character-element">
+            <div class="avatar">
+                <img ng-src="{{character.icon_url}}" alt="image">
+            </div>
+            <div class="info">
+                <clicky class="name" character="character" edit="vm.editCharacter(character)"
+                        submit="vm.doneEditing(character, name)" escape="vm.revertEditing(character)" focus="character == vm.editedCharacter"></clicky>
+
+                <div class="points">{{character.points}} points</div>
+            </div>
+        </div>
+    </div>
+</div>
