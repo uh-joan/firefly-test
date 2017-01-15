@@ -6,6 +6,9 @@
   "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "e2e": "node ./node_modules/.bin/protractor test/protractor.conf.js",
+    "webdriver-start": "node ./node_modules/.bin/webdriver-manager start",
+    "webdriver-update": "node ./node_modules/.bin/webdriver-manager update",
     "start": "node node_modules/.bin/webpack-dev-server --content-base app",
     "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html && mkdir -p dist/assets && cp app/assets/*.svg dist/assets/."
   },
@@ -20,6 +23,7 @@
     "html-loader": "^0.4.4",
     "ng-annotate-loader": "^0.2.0",
     "node-sass": "^4.3.0",
+    "protractor": "^4.0.14",
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",

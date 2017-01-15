@@ -1,17 +1,18 @@
 <!-- narrow -->
-<div class="hidden-xs characters-container wide">
+<div class="hidden-xs characters-container characters-container--wide">
         <uib-tabset active="active">
-            <uib-tab index="$index" ng-repeat="character in vm.characters | orderBy:'-points' track by $index "
+            <uib-tab index="$index" ng-repeat="character in vm.characters | orderBy:'-points' track by $index"
                      heading="{{character.name}}">
-                <div class="characters-wrapper">
-                    <div class="character-element">
-                        <div class="avatar">
+                <div class="wrapper__characters">
+                    <div class="characters__element">
+                        <div class="character__avatar">
                             <img ng-src="{{character.icon_url}}" alt="image">
                         </div>
-                        <div class="info">
-                            <clicky class="name" character="character" edit="vm.editCharacter(character)"
-                                 submit="vm.doneEditing(character, name)" escape="vm.revertEditing(character)" focus="character == vm.editedCharacter"></clicky>
-                            <div class="points">{{character.points}} points</div>
+                        <div class="character__info">
+                            <clicky class="character__name" character="character" edit="vm.editCharacter(character)"
+                                    submit="vm.doneEditing(character, name)" escape="vm.revertEditing(character)" focus="character == vm.editedCharacter"
+                                    id="clicky-{{character.id}}"></clicky>
+                            <div class="character__points">{{character.points}} points</div>
                         </div>
                     </div>
                 </div>
@@ -19,17 +20,17 @@
         </uib-tabset>
 </div>
 <!-- wide -->
-<div class="visible-xs characters-container narrow">
-    <div class="characters-wrapper">
-        <div ng-repeat="character in vm.characters | orderBy:'-points' track by $index" class="character-element">
-            <div class="avatar">
-                <img ng-src="{{character.icon_url}}" alt="image">
+<div class="visible-xs characters-container characters-container--narrow">
+    <div class="wrapper__characters">
+        <div ng-repeat="char in vm.characters | orderBy:'-points' track by $index" class="characters__element">
+            <div class="character__avatar">
+                <img ng-src="{{char.icon_url}}" alt="image">
             </div>
-            <div class="info">
-                <clicky class="name" character="character" edit="vm.editCharacter(character)"
-                        submit="vm.doneEditing(character, name)" escape="vm.revertEditing(character)" focus="character == vm.editedCharacter"></clicky>
+            <div class="character__info">
+                <clicky class="character__name" character="char" edit="vm.editCharacter(char)"
+                        submit="vm.doneEditing(char, name)" escape="vm.revertEditing(char)" focus="char == vm.editedCharacter"></clicky>
 
-                <div class="points">{{character.points}} points</div>
+                <div class="character__points">{{char.points}} points</div>
             </div>
         </div>
     </div>

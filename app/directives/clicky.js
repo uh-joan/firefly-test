@@ -6,11 +6,12 @@ export default ngModule => {
         return {
             template:`
                 <div ng-click="edit();editingOn();">
-                    <label ng-if="!isEditing">{{character.name}}</label>
+                    <label ng-if="!isEditing" tooltip-popup-delay='1000' uib-tooltip='Click to edit'>{{character.name}}</label>
                     <form ng-submit="submit({name:character.name});editingOff();">
-                        <input class="input-name" ng-if="isEditing" ng-blur="escape();editingOff();" ng-model="character.name" ng-change="print()" escapy="escape();editingOff();" focusy="focus()" >
+                        <input  class="clicky--input-name" ng-if="isEditing" ng-blur="escape();editingOff();" ng-model="character.name"
+                                ng-change="print()" escapy="escape();editingOff();" focusy="focus()" >
                     </form>
-                    <div ng-class="{\'move-down\':isEditing}" ng-transclude></div>
+                    <div ng-class="{\'clicky--move-down\':isEditing}" ng-transclude></div>
                 </div>`,
             restrict: 'E',
             transclude: true,

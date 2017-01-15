@@ -19,12 +19,12 @@ body
   border-bottom: 1px solid $border-color-character-element
   &:last-child
     border-bottom: none
-  .avatar
+  .character__avatar
     padding: 12px
-  .info
-    .name
+  .character__info
+    .character__name
       color: $font-color-character-name
-    .points
+    .character__points
       color: $font-color-character-points
 
 // defines the general wrapper
@@ -37,15 +37,15 @@ body
 // The container of characters
 .characters-container
   margin: 100px 50px
-  &.narrow
-    .characters-wrapper
+  &.characters-container--narrow
+    .wrapper__characters
       @extend .wrapper
       width: 211px
-      .character-element
+      .characters__element
         @extend .character
-    .input-name
+    .clicky--input-name
       max-width: 121px
-  &.wide
+  &.characters-container--wide
     max-width: 500px
     .nav-tabs
       margin: 0 15px
@@ -58,21 +58,23 @@ body
           border-color: #eee #eee #ddd
           text-decoration: none
           background-color: #eee
-    .characters-wrapper
+    .wrapper__characters
       @extend .wrapper
-      .character-element
+      .characters__element
         @extend .character
-    .input-name
+    .clicky--input-name
       max-width: 138px
 
-.move-down
+.clicky--move-down
   margin-top: 2px
   margin-left: 2px
 
-.input-name
+.clicky--input-name
   margin-top: -3px
   margin-left: -3px
   font-weight: 700
   &:focus
     outline-width: 1px
     outline-color: $border-color-character-element
+
+
