@@ -47,6 +47,11 @@ It will start a local server using `webpack-dev-server` which will watch, build 
 
 * single run: `npm run build`
 
+Then launch any http server and serve the `dist` folder:
+
+* use http-server `http-server dist` or
+* use httpster `httpster -p 8080 -d dist`
+
 ## Testing
 
 #### 1. End to End Tests
