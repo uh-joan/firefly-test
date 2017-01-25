@@ -5,15 +5,15 @@ export default ngModule => {
     ngModule
         .service('charactersService',
             function($http, charactersUrl, $q){
-                var vm = this;
+                const vm = this;
 
                 // fetch all characters
-                vm.fetch = function(){
+                vm.fetch = () => {
                     var deferred = $q.defer();
 
-                    $http.get(charactersUrl).then(function(response){
+                    $http.get(charactersUrl).then( (response) => {
                         deferred.resolve(response.data);
-                    }, function(e){
+                    }, (e) => {
                         deferred.reject(e);
                     });
                     return deferred.promise;

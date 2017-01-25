@@ -33,10 +33,6 @@ function HomePage(){
         this.clickyInput.sendKeys(protractor.Key.BACK_SPACE);
         this.clickyInput.sendKeys(protractor.Key.BACK_SPACE);
         this.clickyInput.sendKeys(protractor.Key.ESCAPE);
-
-        //return this.clickyInput.getAttribute('value').then(function(value){
-        //    return value;
-        //});
     };
 
     this.getClickyText = function(elementId){

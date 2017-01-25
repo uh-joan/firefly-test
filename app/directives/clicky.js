@@ -2,7 +2,7 @@
 // Directive to handle click to edit character name
 //
 export default ngModule => {
-    ngModule.directive('clicky', function(){
+    ngModule.directive('clicky', () => {
         return {
             template:`
                 <div ng-click="edit();editingOn();">
@@ -22,14 +22,14 @@ export default ngModule => {
                 escape: '&',
                 focus: '&'
             },
-            link: function(scope, element, attrs) {
+            link: (scope, element, attrs) => {
                 scope.isEditing = false;
 
-                scope.editingOn = function(){
+                scope.editingOn = () => {
                     scope.isEditing = true;
                 };
 
-                scope.editingOff = function(){
+                scope.editingOff = () =>{
                     scope.isEditing = false;
                 };
 

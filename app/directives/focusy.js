@@ -2,17 +2,17 @@
 // Directive to handle focus when character name is clicked
 //
 export default ngModule => {
-    ngModule.directive('focusy', function($timeout){
+    ngModule.directive('focusy', ($timeout) => {
         'use strict';
 
         return function (scope, elem, attrs) {
-            scope.$watch(attrs.focusy, function (newVal) {
+            scope.$watch(attrs.focusy, (newVal) => {
                 if (newVal) {
-                    $timeout(function () {
+                    $timeout( () => {
                         elem[0].focus();
                     }, 0, false);
                 } else {
-                    $timeout(function () {
+                    $timeout( () => {
                         elem[0].blur();
                     }, 0, false);
                 }

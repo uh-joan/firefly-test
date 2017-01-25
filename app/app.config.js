@@ -1,6 +1,4 @@
-routing.$inject = ['$urlRouterProvider', '$stateProvider', '$locationProvider'];
-
-export default function routing($urlRouterProvider, $stateProvider, $locationProvider) {
+export default ($urlRouterProvider, $stateProvider, $locationProvider) => {
     $locationProvider.html5Mode({enabled: true, requireBase: false}).hashPrefix('');
     $stateProvider.state('home', {
         url: '/',
@@ -12,7 +10,7 @@ export default function routing($urlRouterProvider, $stateProvider, $locationPro
             }
         },
         resolve: {
-            characters: [ 'charactersService', '$q', function(charactersService, $q){
+            characters: (charactersService, $q) => {
                 var deferred = $q.defer();
 
                 charactersService.fetch().then(function(response){
@@ -22,7 +20,7 @@ export default function routing($urlRouterProvider, $stateProvider, $locationPro
                 });
 
                 return deferred.promise;
-            }]
+            }
         }
     });
 
