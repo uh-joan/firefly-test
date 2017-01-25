@@ -5,12 +5,14 @@
   "description": "Front-end coding test",
   "main": "app/index.js",
   "scripts": {
+    "clean-dist": "node ./node_modules/.bin/rimraf dist",
+    "copy-files": "cp app/index.html dist/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "e2e": "node ./node_modules/.bin/protractor test/protractor.conf.js",
     "webdriver-start": "node ./node_modules/.bin/webdriver-manager start",
     "webdriver-update": "node ./node_modules/.bin/webdriver-manager update",
     "start": "node node_modules/.bin/webpack-dev-server --content-base app",
-    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html",
+    "build": "npm run clean-dist && NODE_ENV=production node node_modules/.bin/webpack && npm run copy-files",
     "deploy": "git push heroku tests:master && heroku open"
   },
   "author": "Joan Saez",
@@ -27,6 +29,7 @@
     "node-sass": "^4.3.0",
     "protractor": "^4.0.14",
     "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
