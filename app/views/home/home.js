@@ -1,8 +1,6 @@
 //
 // Controller for the Home View
 //
-//"build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html && mkdir -p dist/assets && cp app/assets/*.svg dist/assets/."
-
 export default ngModule => {
     ngModule.controller('HomeCtrl',
         function($scope, characters){
