@@ -7,8 +7,6 @@ export default ngModule => {
     ngModule.controller('HomeCtrl',
         function($scope, characters, $window){
             var vm = this;
-            vm.innerWidth = $window.innerWidth;
-            console.log(vm.innerWidth);
 
             vm.characters = characters;
             angular.forEach(vm.characters, function(character){
