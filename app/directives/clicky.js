@@ -22,7 +22,7 @@ export default ngModule => {
                 escape: '&',
                 focus: '&'
             },
-            link: function postLink(scope, element, attrs) {
+            link: function(scope, element, attrs) {
                 scope.isEditing = false;
 
                 scope.editingOn = function(){

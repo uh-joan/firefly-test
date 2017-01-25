@@ -1,6 +1,9 @@
 // Some general stuff
+//colors
 $background-color: #5591D4
-$font-family: "Open Sans"
+$wrapper-background-color: white
+
+$font-family: "Open Sans", sans-serif
 $font-color-character-name: #1D6AB7
 $font-color-character-points: #606060
 $border-color-character-element: #B8B8B8
@@ -29,7 +32,7 @@ body
 
 // defines the general wrapper
 .wrapper
-  background: #fff
+  background: $wrapper-background-color
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10)
   border-radius: 16px
   padding: 15px 0
@@ -37,6 +40,8 @@ body
 // The container of characters
 .characters-container
   margin: 100px 50px
+  //
+  //for narrow screens
   &.characters-container--narrow
     .wrapper__characters
       @extend .wrapper
@@ -45,6 +50,8 @@ body
         @extend .character
     .clicky--input-name
       max-width: 121px
+  //
+  //for wide screens
   &.characters-container--wide
     max-width: 500px
     .nav-tabs
@@ -64,6 +71,7 @@ body
         @extend .character
     .clicky--input-name
       max-width: 138px
+
 
 .clicky--move-down
   margin-top: 2px

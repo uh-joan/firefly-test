@@ -14,6 +14,7 @@ var config = {
             jquery: 'jquery'
         })
     ],
+    devtool: 'eval',
     module: {
         loaders: [
             {
@@ -24,8 +25,8 @@ var config = {
             { test: /\.html$/, loader: 'html', exclude: /node_modules/ },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.sass$/, loader: 'style!css!sass' },
-            { test: /\.svg$/, loader: "file" }
-            //{ test: /\.svg$/, loader: "file?name=[path][name].[ext]&context=./app/assets" }
+            //{ test: /\.svg$/, loader: "file-loader?name=/home/webpack/assets/[name].[ext]" }
+            { test: /\.svg$/, loader: "file-loader?name=/assets/[name].[ext]" }
         ]
     }
 };
@@ -33,7 +34,7 @@ var config = {
 if (process.env.NODE_ENV === 'production'){
     var path = require("path");
     config.output.path = path.resolve(__dirname, "dist");
-    //config.output.publicPath =  '/assets/';
+    //config.output.path = "dist/home/webpack/";
     config.plugins.push(new webpack.optimize.UglifyJsPlugin({
         compress: {
             warnings: false

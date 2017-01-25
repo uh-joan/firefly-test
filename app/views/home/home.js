@@ -1,14 +1,18 @@
 //
 // Controller for the Home View
 //
+//"build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html && mkdir -p dist/assets && cp app/assets/*.svg dist/assets/."
+
 export default ngModule => {
     ngModule.controller('HomeCtrl',
-        function($scope, characters){
+        function($scope, characters, $window){
             var vm = this;
+            vm.innerWidth = $window.innerWidth;
+            console.log(vm.innerWidth);
 
             vm.characters = characters;
             angular.forEach(vm.characters, function(character){
-                character.icon_url = "./assets/"+character.icon+".svg";
+                character.icon_url = require("../../assets/"+character.icon+".svg");
             });
 
             vm.editedCharacter = null;
