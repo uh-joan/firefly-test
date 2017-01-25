@@ -12,7 +12,7 @@ import RegisterServices from './services';
 import RegisterDirectives from './directives';
 
 const ngModule = angular.module('app', [uirouter, tabs, tooltip])
-    .value('charactersUrl', 'http://www.mocky.io/v2/587b91f811000043068ba9c6')
+    .value('charactersUrl', 'https://www.mocky.io/v2/587b91f811000043068ba9c6')
     .config(routing);
 
 RegisterHome(ngModule);
