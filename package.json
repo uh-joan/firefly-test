@@ -10,7 +10,8 @@
     "webdriver-start": "node ./node_modules/.bin/webdriver-manager start",
     "webdriver-update": "node ./node_modules/.bin/webdriver-manager update",
     "start": "node node_modules/.bin/webpack-dev-server --content-base app",
-    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html"
+    "build": "NODE_ENV=production node node_modules/.bin/webpack && cp app/index.html dist/index.html",
+    "deploy": "git push heroku tests:master"
   },
   "author": "Joan Saez",
   "license": "ISC",
