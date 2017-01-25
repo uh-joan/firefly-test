@@ -8,12 +8,12 @@ export default ngModule => {
                 const vm = this;
 
                 // fetch all characters
-                vm.fetch = () => {
+                vm.fetch = function(){
                     var deferred = $q.defer();
 
-                    $http.get(charactersUrl).then( (response) => {
+                    $http.get(charactersUrl).then( function(response){
                         deferred.resolve(response.data);
-                    }, (e) => {
+                    }, function(e){
                         deferred.reject(e);
                     });
                     return deferred.promise;

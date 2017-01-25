@@ -1,4 +1,4 @@
-export default ($urlRouterProvider, $stateProvider, $locationProvider) => {
+export default /*@ngInject*/($urlRouterProvider, $stateProvider, $locationProvider) => {
     $locationProvider.html5Mode({enabled: true, requireBase: false}).hashPrefix('');
     $stateProvider.state('home', {
         url: '/',
