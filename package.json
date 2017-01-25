@@ -14,7 +14,7 @@
     "start": "node node_modules/.bin/webpack-dev-server --content-base app",
     "webpack-validate-dev": "NODE_ENV=development node node_modules/.bin/webpack-validator webpack.config.js",
     "webpack-validate-prod": "NODE_ENV=production node node_modules/.bin/webpack-validator webpack.config.js",
-    "build": "npm run clean-dist && NODE_ENV=production node node_modules/.bin/webpack && npm run copy-files",
+    "build": "npm run clean-dist && NODE_ENV=production node node_modules/.bin/webpack && npm run copy-files && http-server dist",
     "deploy": "git push heroku tests:master && heroku open"
   },
   "author": "Joan Saez",

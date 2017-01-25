@@ -1,0 +1,74 @@
+// defines the single character element
+.character
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  font-size: 16px
+  height: 80px
+  border-bottom: 1px solid $border-color-character-element
+  &:last-child
+    border-bottom: none
+  .character__avatar
+    padding: 12px
+  .character__info
+    .character__name
+      color: $font-color-character-name
+    .character__points
+      color: $font-color-character-points
+
+// defines the general wrapper
+.wrapper
+  background: $wrapper-background-color
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10)
+  border-radius: 16px
+  padding: 15px 0
+
+// The container of characters
+.characters-container
+  margin: 100px 50px
+  //
+  //for narrow screens
+  &.characters-container--narrow
+    .wrapper__characters
+      @extend .wrapper
+      width: 211px
+      .characters__element
+        @extend .character
+    .clicky--input-name
+      max-width: 121px
+  //
+  //for wide screens
+  &.characters-container--wide
+    max-width: 500px
+    .nav-tabs
+      margin: 0 15px
+      li
+        margin-bottom: 0
+        min-width: 75px
+        max-height: 30px
+        a
+          padding: 4px 15px
+          border-color: #eee #eee #ddd
+          text-decoration: none
+          background-color: #eee
+    .wrapper__characters
+      @extend .wrapper
+      .characters__element
+        @extend .character
+    .clicky--input-name
+      max-width: 138px
+
+
+.clicky--move-down
+  margin-top: 2px
+  margin-left: 2px
+
+.clicky--input-name
+  margin-top: -3px
+  margin-left: -3px
+  font-weight: 700
+  &:focus
+    outline-width: 1px
+    outline-color: $border-color-character-element
+
+
