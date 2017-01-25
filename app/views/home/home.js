@@ -5,7 +5,7 @@
 
 export default ngModule => {
     ngModule.controller('HomeCtrl',
-        function($scope, characters, $window){
+        function($scope, characters){
             var vm = this;
 
             vm.characters = characters;
