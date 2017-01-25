@@ -12,8 +12,8 @@
     "webdriver-start": "node ./node_modules/.bin/webdriver-manager start",
     "webdriver-update": "node ./node_modules/.bin/webdriver-manager update",
     "start": "node node_modules/.bin/webpack-dev-server --content-base app",
-    "webpack-validate-dev" : "NODE_ENV=development node node_modules/.bin/webpack-validator webpack.config.js",
-    "webpack-validate-prod" : "NODE_ENV=production node node_modules/.bin/webpack-validator webpack.config.js",
+    "webpack-validate-dev": "NODE_ENV=development node node_modules/.bin/webpack-validator webpack.config.js",
+    "webpack-validate-prod": "NODE_ENV=production node node_modules/.bin/webpack-validator webpack.config.js",
     "build": "npm run clean-dist && NODE_ENV=production node node_modules/.bin/webpack && npm run copy-files",
     "deploy": "git push heroku tests:master && heroku open"
   },
@@ -30,7 +30,6 @@
     "ng-annotate-loader": "^0.2.0",
     "node-sass": "^4.3.0",
     "protractor": "^4.0.14",
-    "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
