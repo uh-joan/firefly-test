@@ -7,6 +7,7 @@
 * Testing environment using protractor to End to End tests.
 * No gulp and no grunt, just npm scripts.
 
+Live [demo](http://pure-lake-26673.herokuapp.com/)
 ### Installing
 
 ```bash
